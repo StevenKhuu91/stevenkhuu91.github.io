@@ -1,161 +1,161 @@
+@font-face {
+    font-family: 'Quicksand';
+    src: url('../fonts/quicksand.ttf'); /* double .. means you go UP a folder from the current directory. required for this to navigate to fonts folder. */
+    font-display: swap;
+    font-style: normal;
+}
+
 body {
     background-color: black;
-    font-size: 15px;
     color: white;
-    font-family: Monospace, sans-serif;
-    font-weight: 100;
 }
 
-h1 {
-    font-size: 50px;
-    font-weight: 100;
-    margin: 0;
+:root {
+    background-image: url('../images/black-felt.png');
+    background-repeat: repeat;
+    background-color: black;
+    font-family: 'Quicksand', 'Monospace';
+    color: white;
+    line-height: 2em;
+    text-align: left;
+
+
+    --fontColor: white;
+    --linkColor: gray;
+    --linkHoverColor: white;
 }
 
-h2 {
-    font-size: 15px;
-    font-weight: 100;
+a {
+    text-decoration: none;
+    color: gray;
+
+    &:hover {
+        color: white;
+    }
 }
 
-@keyframes slide {
+p {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+hr {
+    width: 10em;
+    margin: 2em auto;
+    border: 1px solid #8080803b;
+}
+
+@keyframes fadeIn {
     0% {
-      -webkit-transform: translateX(-25%);
-      -moz-transform: translateX(-25%);
-      -ms-transform: translateX(-25%);
-      -o-transform: translateX(-25%);
-      transform: translateX(-25%);
-    }
+        opacity: 0;
+        margin-top: 2em;
+    };
     100% {
-      -webkit-transform: translateX(25%);
-      -moz-transform: translateX(25%);
-      -ms-transform: translateX(25%);
-      -o-transform: translateX(25%);
-      transform: translateX(25%);
+        opacity: 1;
+        margin-top: 0em;
+    };
+}
+
+.logo {
+    position: fixed;
+    top: 3em;
+    left: 3em;
+    background-image: url('../images/logoTransparent.png');
+    width: 27px;
+    height: 50px;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        filter: invert(75%);
+        -webkit-transition: all .3s ease-in-out;
+        -moz-transition: all .3s ease-in-out;
+        -o-transition: all .3s ease-in-out;
+        -ms-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
     }
 }
 
-.bg {
-    background-image: linear-gradient(-60deg, #222222 50%, #18191a 50%);
-    position: fixed;
-    bottom: 0;
-    left: -50%;
-    right: -50%;
-    top: 0;
-    opacity: .5;
-    z-index: -1;
-    -webkit-animation: slide 3s ease-in-out infinite alternate;
-    -moz-animation: slide 3s ease-in-out infinite alternate;
-    -ms-animation: slide 3s ease-in-out infinite alternate;
-    -o-animation: slide 3s ease-in-out infinite alternate;
-    animation: slide 3s ease-in-out infinite alternate;
-}
-
-.bg2 {
-    animation-direction: alternate-reverse;
-    animation-duration: 4s;
-}
-
-.bg3 {
-    animation-duration: 5s;
-}
-
-/*--- LANDING PAGE ---*/
 .container {
+    margin: auto; position: fixed;
+    left: 0; top: 0; right: 0; bottom: 0;
+    width: 40em;
+    height: 60em;
+}
+
+.navContainer {
     position: fixed;
-    margin: auto;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    max-width: 43vw;
-    height: 70vh;
-    padding: 5em;
-    background-color: #0f0f0f;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    -ms-border-radius: 2px;
-    -o-border-radius: 2px;
-    border-radius: 2px;
-
-    &::before {
-        content: '';
-        position: absolute;
-        top: -15px;
-        left: -15px;
-        right: 15px;
-        bottom: 15px;
-        border: 4px solid #0f0f0f;
-        z-index: 99;
-        mix-blend-mode: difference;
-        -webkit-border-radius: 2px;
-        -moz-border-radius: 2px;
-        -ms-border-radius: 2px;
-        -o-border-radius: 2px;
-        border-radius: 2px;
-    }
-}
-
-.stripeBoxName {
-    background-image: linear-gradient(45deg, #0f0f0f 38.46%, #1c1c1c 38.46%, #1c1c1c 50%, #0f0f0f 50%, #0f0f0f 88.46%, #1c1c1c 88.46%, #1c1c1c 100%);
-    background-size: 18.38px 18.38px;
-    position: absolute;
-    top: 6.5rem;
-    left: 5.5rem;
-    width: 65%;
-    height: 10em;
-    z-index: -1;
-}
-
-.introBox {
-    position: absolute;
-    bottom: 3em;
-    right: 4em;
-    width: 15em;
-    height: 15em;
-    z-index: 900;
-}
-
-.stripeBoxInfo {
-    background-image: linear-gradient(45deg, #0f0f0f 38.46%, #1c1c1c 38.46%, #1c1c1c 50%, #0f0f0f 50%, #0f0f0f 88.46%, #1c1c1c 88.46%, #1c1c1c 100%);
-    background-size: 18.38px 18.38px;
-    position: absolute;
-    bottom: 3rem;
-    right: 6rem;
-    width: 18em;
-    height: 20em;
-    z-index: -1;
+    top: 2em;
+    right: 2em;
+    display: flex;
+    justify-content: center;
 }
 
 .nav {
-    position: absolute;
-    top: 20em;
-    left: 4.5em;
-    width: 8em;
-    height: 10em;
-    z-index: 900;
-}
-
-.btn {
+    position: relative;
     display: block;
-    padding: .5em;
-    text-align: left;
-    text-decoration: none;
-    font-size: 1.2em;
-    font-variant: small-caps;
-    color: white;
-    cursor: default;
-    -webkit-transition: opacity 0.3s ease;
-    -moz-transition: opacity 0.3s ease;
-    -ms-transition: opacity 0.3s ease;
-    -o-transition: opacity 0.3s ease;
-    transition: opacity 0.3s ease;
+    width: 100px;
+    height: 20px;
+    color: #ffffff;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+
+    &:hover{
+        color: #969696;
+        -webkit-transition: all .3s ease-in-out;
+        -moz-transition: all .3s ease-in-out;
+        -o-transition: all .3s ease-in-out;
+        -ms-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
 }
 
-  .nav:hover .btn {
-    opacity: 0.2;
-  }
+    &:after {
+        position: absolute;
+        top: 0em;
+        right: 7em;
+        content:'►';
+        font-size: 10px;
+        color: #969696;
+        opacity: 0;
+        -webkit-transition: .3s ease-in-out;
+        -moz-transition: .3s ease-in-out;
+        -ms-transition: .3s ease-in-out;
+        -o-transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
+}
 
-  .nav .btn:hover {
-    opacity: 1;
-    text-transform: uppercase
-  }
+    &:hover:after {
+        right: 8em;
+        opacity: 1;
+    }
+}
+/* FIGURE OUT HOW TO STAGGER THIS SO ALL THE TEXT BLOCKS COME IN GRADUALLY */
+.infoBlock {
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 100ms;
+    margin-top: 1em;
+}
+
+#second {
+    animation-delay: 200ms;
+}
+
+#third {
+    animation-delay: 300ms;
+}
+
+#fourth {
+    animation-delay: 400ms;
+}
